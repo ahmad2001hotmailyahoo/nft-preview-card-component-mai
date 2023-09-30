@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | NFT preview card component</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&family=Outfit:wght@300;400;600&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    
+    *{
+      padding: 0;
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+    }
+    html{
+      height: 100%;
+    }
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      background:  hsl(217, 54%, 11%);
+    }
+    img,.card{
+      border-radius: 10px;
+      max-width: 250px ;
+    }
+    .card{
+      position: relative;
+      background: hsl(216, 50%, 16%);
+      padding: 15px;
+      box-shadow: 0 0 15px 2px hsl(216, 50%, 8%);
+    }
+    .white{
+      color: white;
+    }
+    .Cyan{
+      color: hsl(178, 100%, 50%);
+    }
+    p{
+      color:white;
+      margin: 10px 0;
+    }
+    .equilibrium{
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .paragraph_equlibrium{
+      font-weight: 300;
+      color: hsl(215, 51%, 70%);
+      font-size: 14px;
+    }
+    .flexify{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      margin: 10px 0;
+    }
+    .cyan{
+      color: hsl(178, 100%, 50%);
+      display: flex;
+      align-items: center;
+    }
+    .m-5{
+      margin-left: 5px;
+      margin-top: 3px;
+    }
+    .m-l-5{
+      margin-left: 5px;
+    }
+    .line{
+      border: 1px solid hsl(215, 32%, 27%);
+      margin: 10px 0;
+    }
+    .pointer{
+      cursor:pointer;
+    }
+    .transparent{
+      background-color: transparent;
+    }
+    .image::after{
+      content: '';
+      position: absolute;
+      background-color: transparent;
+      height: 250px;
+      width: 250px;
+      top: 15px;
+      left: 15px;
+      z-index: 2;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="image" id="image">
+      <img src="./images/image-equilibrium.jpg" width="250" height="250">
+    </div>
+    <p class="equilibrium" id="equilibrium">Equilibrium #3429</p>
+    <p class="paragraph_equlibrium" id="paragraph_equlibrium">Our Equilibrium collection promotes balance and calm.</p>
+    <div class="flexify">
+      <div class="cyan">
+        <svg width="11" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 10.216 5.5 18 0 10.216l5.5 3.263 5.5-3.262ZM5.5 0l5.496 9.169L5.5 12.43 0 9.17 5.5 0Z" fill="#00FFF8"/></svg>
+        <div class="m-5">0.041 ETH</div>
+      </div> 
+      <div class="flexify">
+        <svg width="17" height="17" xmlns="http://www.w3.org/2000/svg"><path d="M8.305 2.007a6.667 6.667 0 1 0 0 13.334 6.667 6.667 0 0 0 0-13.334Zm2.667 7.334H8.305a.667.667 0 0 1-.667-.667V6.007a.667.667 0 0 1 1.334 0v2h2a.667.667 0 0 1 0 1.334Z" fill="#8BACD9"/></svg>
+        <div class="m-l-5">3 days left</div>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="flexify" style="justify-content: flex-start;">
+      <img src=".\images\image-avatar.png" width="30" height="30">
+      <div class="white m-l-5 pointer">Creation of <b class="pointer" onclick="hanldeClick()">julis Wyren</b></div>
+    </div>
+  </div>
+</body>
+</html>
+<script>
+const hanldeClick = () => {
+  let equilibrium_color = document.getElementById('equilibrium')
+  const image = document.getElementById('image');
+  const image_pseudo = window.getComputedStyle(image, ':after');
+  equilibrium_color.style.color == "rgb(0, 255, 247)"?equilibrium_color.style.color="white":equilibrium_color.style.color="hsl(178, 100%, 50%)";
+  console.log(image_pseudo.classList)
+  image_pseudo.color == 'rgb(0,0,0)'? image_pseudo.classList.add(Cyan):image_pseudo.classList.add(transparent);
+  
+
+}
+</script>
